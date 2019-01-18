@@ -1,0 +1,9 @@
+body {
+	text-align: center;
+	margin-top: 20%;
+}
+
+.question-container {
+	border: 10px solid black;
+	height: 500px;
+}
