@@ -40,7 +40,7 @@ $(function(){
 		changeQuestion(questionIndex); 
 	});
 
-	$('.btn-default').click(function(){
+	$('.btn-secondary').click(function(){
 		questionIndex--;
 		changeQuestion(questionIndex);
 	});
