@@ -11,3 +11,7 @@ body {
 .question-container:not(.current-question) {
 	display : none;
 }
+
+.results-container {
+	display: none;
+}
