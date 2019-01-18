@@ -1,20 +1,27 @@
+
 function nextQuestion(questionIndex) {
 	$(".current-question").addClass("bounceOutLeft animated");
 
 	setTimeout(function(){
 		$(".current-question").removeClass("current-question bounceOutLeft animated");
 		$("#q" + questionIndex).addClass("current-question bounceInRight animated");
-
+			setTimeout(function(){
+				$(".current-question").removeClass("bounceInRight animated");
+			},750);
 	},750);
+
+	
 }
 
 function previousQuestion(questionIndex) {
-	$(".bounceInRight").removeClass("bounceInRight");
 	$(".current-question").addClass("bounceOutRight animated");
 
 	setTimeout(function(){
 		$(".current-question").removeClass("current-question bounceInRight bounceOutRight animated");
-		$("#q" + questionIndex).addClass("current-question bounceInRight animated");
+		$("#q" + questionIndex).addClass("current-question bounceInLeft animated");
+			setTimeout(function(){
+				$(".current-question").removeClass("bounceInLeft animated");
+			},750);
 	},750);
 }
 
