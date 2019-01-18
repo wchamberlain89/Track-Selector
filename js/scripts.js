@@ -3,6 +3,33 @@ function changeQuestion(questionIndex) {
 	$("#q" + questionIndex).addClass("current-question");
 }
 
+function displayResult(answersArray) {
+	var resultOne = 0;
+	var resultTwo = 0;
+	var resultThree = 0;
+	var finalResult = "";
+	
+	answersArray.forEach(function(answer){
+		if(answer === 1) {
+			resultOne++;
+		} else if (answer === 2) {
+			resultTwo++
+		} else {
+			resultThree++
+		}
+	});
+
+	if (resultOne > resultTwo && resultOne > resultThree) {
+		finalResult = "resultOne";
+	} else if (resultTwo > resultThree && resultTwo > resultThree) {
+		finalResult = "resultTwo";
+	} else {
+		finalResult = "resultThree";
+	}
+
+	return finalResult;
+}
+
 
 
 $(function(){
@@ -27,10 +54,9 @@ $(function(){
 	$('.submit').click(function(){
 		var answers = [];
 		$(".question-container").each(function() {
-			answers.push($(this).find("input:checked").val());
-			console.log(answers);
+			answers.push(parseInt($(this).find("input:checked").val()));
 		});
-		// $(".results-container h1").text(getResult());
+		$(".results-container h1").text(displayResult(answers));
 		$(".current-question").removeClass("current-question");
 		$(".results-container").show();
 	});
