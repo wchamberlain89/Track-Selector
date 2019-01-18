@@ -32,8 +32,10 @@ header img {
 
 .question-container {
 	border: 10px solid #00b3b4;
+	border-radius: 15px;
 	height: 500px;
 	background-color: #fff;
+	box-shadow: -10px 10px 50px;
 }
 
 .radio.question {
@@ -70,4 +72,8 @@ label {
 
 .language-logo {
 	width: 200px;
+}
+
+.animated {
+	animation-duration: 1s; 
 }

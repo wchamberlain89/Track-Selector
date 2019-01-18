@@ -1,7 +1,26 @@
-function changeQuestion(questionIndex) {
-	$(".current-question").removeClass("current-question");
-	$("#q" + questionIndex).addClass("current-question");
+function nextQuestion(questionIndex) {
+	$(".current-question").addClass("bounceOutLeft animated");
+
+	setTimeout(function(){
+		$(".current-question").removeClass("current-question bounceOutLeft animated");
+		$("#q" + questionIndex).addClass("current-question bounceInRight animated");
+
+	},750);
 }
+
+function previousQuestion(questionIndex) {
+	$(".bounceInRight").removeClass("bounceInRight");
+	$(".current-question").addClass("bounceOutRight animated");
+
+	setTimeout(function(){
+		$(".current-question").removeClass("current-question bounceInRight bounceOutRight animated");
+		$("#q" + questionIndex).addClass("current-question bounceInRight animated");
+	},750);
+}
+
+
+
+
 
 function mostVotes(num1,num2,num3) {
 	return num1 > num2 && num1 > num3;
@@ -52,21 +71,21 @@ $(function(){
 	
 	$('.btn-info').click(function(){
 		questionIndex++;
-		changeQuestion(questionIndex); 
+		nextQuestion(questionIndex); 
 	});
 
 	$('.btn-secondary').click(function(){
 		questionIndex--;
-		changeQuestion(questionIndex);
+		previousQuestion(questionIndex);
 	});
 
 	$('.reset').click(function(){
-		$(".results-container").hide();
+		$(".results-container").addClass('animated bounceOutLeft');
 		questionIndex = 1;
 		$('.question').each(function(){
 			$(this).find('input').first().prop('checked', true);
 		});
-		changeQuestion(questionIndex);
+		nextQuestion(questionIndex);
 	});
 
 	$('.submit').click(function(){
@@ -80,9 +99,15 @@ $(function(){
 
 		$(".results-container h1").text(userResult);
 		$(".logo-container img").attr("src", "imgs/" + getImage(userResult));
+		$(".results-container").removeClass('animated bounceOutLeft')
+		$(".current-question").addClass("animated bounceOutLeft");
 
-		$(".current-question").removeClass("current-question");
-		$(".results-container").show();
+		setTimeout(function(){
+			$(".current-question").removeClass("current-question animated bounceOutLeft");
+			$(".results-container").show();
+			$(".results-container").addClass('animated bounceInRight');
+		}, 750);
+
 	});
 
 });
