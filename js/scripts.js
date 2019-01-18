@@ -25,6 +25,12 @@ $(function(){
 	});
 
 	$('.submit').click(function(){
+		var answers = [];
+		$(".question-container").each(function() {
+			answers.push($(this).find("input:checked").val());
+			console.log(answers);
+		});
+		// $(".results-container h1").text(getResult());
 		$(".current-question").removeClass("current-question");
 		$(".results-container").show();
 	});
