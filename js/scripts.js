@@ -3,7 +3,11 @@ function changeQuestion(questionIndex) {
 	$("#q" + questionIndex).addClass("current-question");
 }
 
-function displayResult(answersArray) {
+function mostVotes(num1,num2,num3) {
+	return num1 > num2 && num1 > num3;
+}
+
+function getResult(answersArray) {
 	var resultOne = 0;
 	var resultTwo = 0;
 	var resultThree = 0;
@@ -19,15 +23,26 @@ function displayResult(answersArray) {
 		}
 	});
 
-	if (resultOne > resultTwo && resultOne > resultThree) {
+	if (mostVotes(resultOne,resultTwo,resultThree)) {
 		finalResult = "Front-end / React";
-	} else if (resultTwo > resultThree && resultTwo > resultThree) {
+	} else if (mostVotes(resultTwo,resultOne,resultThree)) {
 		finalResult = "PhP / Drupal";
 	} else {
 		finalResult = "Java / Android";
 	}
 
+
 	return finalResult;
+}
+
+function getImage(course) {
+	if(course === "Front-end / React") {
+		return "react.png"
+	} else if(course === "Java / Android") {
+		return "java.png"
+	} else {
+		return "php.png"
+	}
 }
 
 
@@ -56,10 +71,16 @@ $(function(){
 
 	$('.submit').click(function(){
 		var answers = [];
+
 		$(".question-container").each(function() {
 			answers.push(parseInt($(this).find("input:checked").val()));
 		});
-		$(".results-container h1").text(displayResult(answers));
+
+		var userResult = getResult(answers)
+
+		$(".results-container h1").text(userResult);
+		$(".logo-container img").attr("src", "imgs/" + getImage(userResult));
+
 		$(".current-question").removeClass("current-question");
 		$(".results-container").show();
 	});
