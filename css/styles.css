@@ -7,3 +7,7 @@ body {
 	border: 10px solid black;
 	height: 500px;
 }
+
+.question-container:not(.current-question) {
+	display : none;
+}
