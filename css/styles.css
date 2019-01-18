@@ -30,7 +30,7 @@ header img {
     transform: translateY(-50%);
 }
 
-.question-container {
+.question-container, .results-container {
 	border: 10px solid #00b3b4;
 	border-radius: 15px;
 	height: 500px;

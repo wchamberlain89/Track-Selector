@@ -88,6 +88,9 @@ $(function(){
 
 	$('.reset').click(function(){
 		$(".results-container").addClass('animated bounceOutLeft');
+		setTimeout(function(){
+			$(".results-container").removeClass('animated bounceOutLeft bounceInRight').hide();
+		},750);
 		questionIndex = 1;
 		$('.question').each(function(){
 			$(this).find('input').first().prop('checked', true);
@@ -111,8 +114,7 @@ $(function(){
 
 		setTimeout(function(){
 			$(".current-question").removeClass("current-question animated bounceOutLeft");
-			$(".results-container").show();
-			$(".results-container").addClass('animated bounceInRight');
+			$(".results-container").addClass('animated bounceInRight').show();
 		}, 750);
 
 	});
