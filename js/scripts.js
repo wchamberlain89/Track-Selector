@@ -48,6 +48,9 @@ $(function(){
 	$('.reset').click(function(){
 		$(".results-container").hide();
 		questionIndex = 1;
+		$('.question').each(function(){
+			$(this).find('input').first().prop('checked', true);
+		});
 		changeQuestion(questionIndex);
 	});
 
