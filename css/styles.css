@@ -1,11 +1,14 @@
 body {
 	text-align: center;
 	margin-top: 20%;
+	background-color: #969696;
+	font-family: Merriweather, serif;
 }
 
 .question-container {
-	border: 10px solid black;
+	border: 10px solid #00b3b4;
 	height: 500px;
+	background-color: #fff;
 }
 
 .question-container:not(.current-question) {

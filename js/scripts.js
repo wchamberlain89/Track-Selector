@@ -20,11 +20,11 @@ function displayResult(answersArray) {
 	});
 
 	if (resultOne > resultTwo && resultOne > resultThree) {
-		finalResult = "resultOne";
+		finalResult = "Front-end / React";
 	} else if (resultTwo > resultThree && resultTwo > resultThree) {
-		finalResult = "resultTwo";
+		finalResult = "PhP / Drupal";
 	} else {
-		finalResult = "resultThree";
+		finalResult = "Java / Android";
 	}
 
 	return finalResult;
