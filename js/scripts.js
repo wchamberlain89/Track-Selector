@@ -71,17 +71,30 @@ function getImage(course) {
 	}
 }
 
+function getUrl(course) {
+	if(course === "Front-end / React") {
+		return "react"
+	} else if(course === "Java / Android") {
+		return "java"
+	} else {
+		return "php"
+	}
+}
+
 
 
 $(function(){
-	questionIndex = 1; 
+	var questionIndex = 1; 
+	var user = "";
+	var email = "";
 	
 	$('.btn-danger').click(function(){
-		var user = $("#name").val();
-		var email = $("#email").val();
+		user = $("#name").val();
+		email = $("#email").val();
 		
 		if(user.length > 0 && email.length > 0){
 			$(".welcome").addClass("animated bounceOutLeft");
+			$(".results-container p").text("Thank you, " + user + " we recommend you check out our course on: ") 
 			setTimeout(function(){
 				$('#q1').addClass("animated bounceInRight current-question");
 				$(".welcome").removeClass("animated bounceOutLeft").hide();
@@ -126,6 +139,7 @@ $(function(){
 
 		$(".results-container h1").text(userResult);
 		$(".logo-container img").attr("src", "imgs/" + getImage(userResult));
+		$(".logo-container a").attr("href", "https://www.epicodus.com/" + getUrl(userResult));
 		$(".results-container").removeClass('animated bounceOutLeft')
 		$(".current-question").addClass("animated bounceOutLeft");
 
