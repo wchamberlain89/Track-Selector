@@ -11,10 +11,11 @@ body {
 	background-color: #969696;
 	font-family: Merriweather, serif;
 	text-align: center;
+	padding-top: 2%;
 }
 
 header {
-	margin: 20px 0;
+	margin-bottom: 20px;
 }
 
 header img {
@@ -30,7 +31,26 @@ header img {
     transform: translateY(-50%);
 }
 
-.question-container, .results-container {
+.welcome {
+	padding-left: 10%;
+	padding-right: 10%;
+}
+
+.user label:first-child {
+	margin-right: 20px;
+}
+
+.btn-danger {
+	margin-top: 30px;
+}
+
+.error {
+	font-size: 12px;
+	color: red;
+	font-style: italic;
+}
+
+.question-container, .results-container, .welcome {
 	border: 10px solid #00b3b4;
 	border-radius: 15px;
 	height: 500px;

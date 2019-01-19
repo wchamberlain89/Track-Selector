@@ -19,181 +19,204 @@
 		<header>
 			<img src="imgs/logo.png">
 		</header>
-		<div>
-			<form class="questionnaire form-group">
-
-				<div class="question-container current-question" id="q1">
-					<div class='vertical-center'>
-						<h3>Why are you interested in programming?</h3>
-
-						<div class="radio question">
-							<div>
-								<label>
-									<input type="radio" name="one" value="2" checked>
-									I have a website idea, or want to be able to help make websites for others/businesses.
-								</label>
-							</div>
-
-							<div>
-								<label>
-									<input type="radio" name="one" value="3">
-									I want to work for large tech companies.
-								</label>
-							</div>
-
-							<div>
-								<label>
-									<input type="radio" name="one" value="1">
-									I'm interested in making websites look good.
-								</label>
-							</div>
-						</div>
-
-						<button type="button" class='btn btn-outline-secondary' disabled="">Back</button>
-						<button type="button" class='btn btn-info next'>Next</button>
-					</div>
-				</div>
-
-				<div class="question-container" id="q2">
-					<div class='vertical-center'>
-						<h3>What kind of application are you most interested in making?</h3>
-
-						<div class="radio question">
-							<div>
-								<label>
-									<input type="radio" name="two" value="1" checked>
-									Web.
-								</label>
-							</div>
-
-							<div>
-								<label>
-									<input type="radio" name="two" value="3">
-									Mobile.
-								</label>
-							</div>
-
-							<div>
-								<label>
-									<input type="radio" name="two" value="2">
-									All kinds of applications.
-								</label>
-							</div>
-						</div>
-						<button type="button" class='btn btn-secondary back'>Back</button>
-						<button type="button" class='btn btn-info next'>Next</button>
-					</div>
-				</div>
-
-				<div class="question-container" id="q3">
-					<div class='vertical-center'>
-						<h3>What interests you the most?</h3>
-
-						<div class="radio question">
-							<div>
-								<label>
-									<input type="radio" name="three" value="1" checked>
-									Design of how things look.
-								</label>
-							</div>
-
-							<div>
-								<label>
-									<input type="radio" name="three" value="3">
-									Logic of how things are suppose to function.
-								</label>
-							</div>
-
-							<div>
-								<label>
-									<input type="radio" name="three" value="2">
-									Making things quickly.
-								</label>
-							</div>
-						</div>
-						<button type="button" class='btn btn-secondary back'>Back</button>
-						<button type="button" class='btn btn-info next'>Next</button>
-					</div>
-				</div>
-
-				<div class="question-container" id="q4">
-					<div class='vertical-center'>
-						<h3>What kind of company do you want to work at following Epicodus?</h3>
-
-						<div class="radio question">
-							<div>
-								<label>
-									<input type="radio" name="four" value="2" checked>
-									Small business / startup
-								</label>
-							</div>
-
-							<div>
-								<label>
-									<input type="radio" name="four" value="3">
-									Large tech company
-								</label>
-							</div>
-							<div>
-								<label>
-									<input type="radio" name="four" value="1">
-									I'm not sure yet.
-								</label>
-							</div>
-						</div>
-						<button type="button" class='btn btn-secondary back'>Back</button>
-						<button type="button" class='btn btn-info next'>Next</button>
-					</div>
-				</div>
-
-				<div class="question-container" id="q5">
-					<div class='vertical-center'>
-						<h3>What language has stuck out to you the most?</h3>
-
-						<div class="radio question">
-							<div>
-								<label>
-									<input type="radio" name="five" value="2" checked>
-									PhP
-								</label>
-							</div>
-
-							<div>
-								<label>
-									<input type="radio" name="five" value="3">
-									Java
-								</label>
-							</div>
-
-							<div>
-								<label>
-									<input type="radio" name="five" value="1">
-									Javascript
-								</label>
-							</div>
-						</div>
-						<button type="button" class='btn btn-secondary back'>Back</button>
-						<button type="button" class='btn btn-success submit'>Submit your answers!</button>
-					</div>
-				</div>
-
-			</form>
-		</div>
-		<div class="results-container">
-			<div class="vertical-center">
-				<div class='logo-container'>
-					<img class='language-logo' src="">
-				</div>
-				<h1></h1>
-				<button class='btn btn-warning reset'>Try again?</button>
-			</div>
-		</div>	
 		
+		<div class="welcome">
+			<div class='vertical-center'>
+				<p>
+					Interested in Epicodus but not sure where to start? Answer a few question and we'll help lead you to the best Programming track for you. Just enter your name and email below to and be one step closer to an exciting career in computer web design!
+				</p>
+				<form class="user">
+					<label for="name">
+						<input class="form-control" type="text" name="name" id="name" placeholder="Your Name">
+					</label>
+					<label for="email">
+						<input class="form-control" type="email" name="email" id="email" placeholder="Your Email">
+					</label>
+				</form>
+				<button type="button" class='btn btn-danger btn-lg'>Start Survey</button>
+				<div>
+					<span class="error">
+					
+					</span>
+				</div>
+			</div>
+		</div>
 
 
+		<form class="questionnaire form-group">
 
+			<div class="question-container" id="q1">
+				<div class='vertical-center'>
+					<h3>Why are you interested in programming?</h3>
 
+					<div class="radio question">
+						<div>
+							<label>
+								<input type="radio" name="one" value="2" checked>
+								I have a website idea, or want to be able to help make websites for others/businesses.
+							</label>
+						</div>
 
+						<div>
+							<label>
+								<input type="radio" name="one" value="3">
+								I want to work for large tech companies.
+							</label>
+						</div>
+
+						<div>
+							<label>
+								<input type="radio" name="one" value="1">
+								I'm interested in making websites look good.
+							</label>
+						</div>
+					</div>
+
+					<button type="button" class='btn btn-outline-secondary' disabled="">Back</button>
+					<button type="button" class='btn btn-info next'>Next</button>
+				</div>
+			</div>
+
+			<div class="question-container" id="q2">
+				<div class='vertical-center'>
+					<h3>What kind of application are you most interested in making?</h3>
+
+					<div class="radio question">
+						<div>
+							<label>
+								<input type="radio" name="two" value="1" checked>
+								Web.
+							</label>
+						</div>
+
+						<div>
+							<label>
+								<input type="radio" name="two" value="3">
+								Mobile.
+							</label>
+						</div>
+
+						<div>
+							<label>
+								<input type="radio" name="two" value="2">
+								All kinds of applications.
+							</label>
+						</div>
+					</div>
+					<button type="button" class='btn btn-secondary back'>Back</button>
+					<button type="button" class='btn btn-info next'>Next</button>
+				</div>
+			</div>
+
+			<div class="question-container" id="q3">
+				<div class='vertical-center'>
+					<h3>What interests you the most?</h3>
+
+					<div class="radio question">
+						<div>
+							<label>
+								<input type="radio" name="three" value="1" checked>
+								Design of how things look.
+							</label>
+						</div>
+
+						<div>
+							<label>
+								<input type="radio" name="three" value="3">
+								Logic of how things are suppose to function.
+							</label>
+						</div>
+
+						<div>
+							<label>
+								<input type="radio" name="three" value="2">
+								Making things quickly.
+							</label>
+						</div>
+					</div>
+					<button type="button" class='btn btn-secondary back'>Back</button>
+					<button type="button" class='btn btn-info next'>Next</button>
+				</div>
+			</div>
+
+			<div class="question-container" id="q4">
+				<div class='vertical-center'>
+					<h3>What kind of company do you want to work at following Epicodus?</h3>
+
+					<div class="radio question">
+						<div>
+							<label>
+								<input type="radio" name="four" value="2" checked>
+								Small business / startup
+							</label>
+						</div>
+
+						<div>
+							<label>
+								<input type="radio" name="four" value="3">
+								Large tech company
+							</label>
+						</div>
+						<div>
+							<label>
+								<input type="radio" name="four" value="1">
+								I'm not sure yet.
+							</label>
+						</div>
+					</div>
+					<button type="button" class='btn btn-secondary back'>Back</button>
+					<button type="button" class='btn btn-info next'>Next</button>
+				</div>
+			</div>
+
+			<div class="question-container" id="q5">
+				<div class='vertical-center'>
+					<h3>What language has stuck out to you the most?</h3>
+
+					<div class="radio question">
+						<div>
+							<label>
+								<input type="radio" name="five" value="2" checked>
+								PhP
+							</label>
+						</div>
+
+						<div>
+							<label>
+								<input type="radio" name="five" value="3">
+								Java
+							</label>
+						</div>
+
+						<div>
+							<label>
+								<input type="radio" name="five" value="1">
+								Javascript
+							</label>
+						</div>
+					</div>
+					<button type="button" class='btn btn-secondary back'>Back</button>
+					<button type="button" class='btn btn-success submit'>Submit your answers!</button>
+				</div>
+			</div>
+
+		</form>
 	</div>
+	<div class="results-container">
+		<div class="vertical-center">
+			<div class='logo-container'>
+				<img class='language-logo' src="">
+			</div>
+			<h1></h1>
+			<button class='btn btn-warning reset'>Try again?</button>
+		</div>
+	</div>	
+
+
+
+
+
+
+</div>
 </body>
 </html>

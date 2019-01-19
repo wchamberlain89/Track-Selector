@@ -76,6 +76,23 @@ function getImage(course) {
 $(function(){
 	questionIndex = 1; 
 	
+	$('.btn-danger').click(function(){
+		var user = $("#name").val();
+		var email = $("#email").val();
+		
+		if(user.length > 0 && email.length > 0){
+			$(".welcome").addClass("animated bounceOutLeft");
+			setTimeout(function(){
+				$('#q1').addClass("animated bounceInRight current-question");
+				$(".welcome").removeClass("animated bounceOutLeft").hide();
+			}, 750);
+		} else {
+			$(".welcome").addClass("animated shake");
+			$(".error").text("Please complete all fields to continue.");
+		}
+		
+	});
+
 	$('.btn-info').click(function(){
 		questionIndex++;
 		nextQuestion(questionIndex); 
